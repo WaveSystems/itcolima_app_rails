@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120314135856) do
+ActiveRecord::Schema.define(:version => 20120314141619) do
 
   create_table "alumnos", :force => true do |t|
     t.integer  "no_control"
@@ -27,6 +27,33 @@ ActiveRecord::Schema.define(:version => 20120314135856) do
     t.string   "carrera"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "asesors", :force => true do |t|
+    t.string   "titulo"
+    t.string   "apellido_paterno"
+    t.string   "apellido_materno"
+    t.string   "nombre"
+    t.string   "departamento"
+    t.string   "no_ife"
+    t.string   "email"
+    t.string   "curp"
+    t.string   "nivel_academico"
+    t.string   "tipo_asesor"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "proyectos", :force => true do |t|
+    t.string   "categoria"
+    t.string   "nombre"
+    t.string   "area_participacion"
+    t.text     "objetivo"
+    t.text     "innovacion"
+    t.text     "resultados_esperados"
+    t.integer  "numero_de_autores"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
   create_table "users", :force => true do |t|
