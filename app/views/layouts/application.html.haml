@@ -8,8 +8,20 @@
   %body
     %p.notice= notice
     %p.alert= alert
-    #header
-    #navigation
-    #content
-      = yield
-    #footer
+    #page
+      #header
+      #navigation
+        #index
+          %h3= link_to "Inicio", root_path
+        #dashboard
+          %h3= link_to "Registrar proyectos", registrations_path
+        #session
+          - if user_signed_in?
+            #email
+              = current_user.email
+            #button
+              = button_to "Cerrar sesión", destroy_user_session_path, :method => "delete"
+        #content
+          = yield
+        #footer
+          %p &copy WaveSystems 2012

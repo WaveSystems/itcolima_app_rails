@@ -1,1 +1,60 @@
-//EDA!
+$altura:1080px;
+$ancho:960px;
+
+.message{
+}
+
+body{
+}
+#page{ 
+  margin-left:auto;
+  margin-right:auto;
+  height:$altura;
+  width:$ancho;
+}
+#header{
+  height:90px;
+  background:gray;
+  width:$ancho;
+  float:left;
+}
+#navigation{
+  background-color:#646b71;
+  height:50px;
+  width:$ancho;
+  float:left;
+}
+#index{
+  width:150px;
+  float:left;
+}
+#dashboard{
+  width:300px;
+  float:left;
+}
+#session{
+  float:left;
+  width:300px;
+}
+
+#email{
+  float:left;
+  width:150px;
+}
+#button{
+  float:left;
+  width:150px;
+}
+
+#content{
+  background-color:white;
+  height:$altura * 0.8;
+  width:$ancho;
+  float:left;
+}
+#footer{
+  float:left;
+  background-color:#646b71;
+  height:50px;
+  width:$ancho;
+}
