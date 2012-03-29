@@ -24,12 +24,17 @@
           %h3= link_to "Acerca de", about_path
         #contact(align="center")
           %h3= link_to "Contacto", contact_path
-        -##session
-          -#- if user_signed_in?
-            -##email
-              -#= current_user.email
-            -##button
-              -#= button_to "Cerrar sesión", destroy_user_session_path, :method => "delete"
+        #session
+          - if user_signed_in?
+            #email(align = "center")
+              %h4= current_user.email
+            #button(align = "center")
+              %h3= link_to "Cerrar sesión", destroy_user_session_path, :method => "delete"
+          - else
+            #email(align = "center")
+              %h3= link_to "Iniciar sesión", new_user_session_path
+            #button(align = "center")
+              %h3= link_to "Registrarse", new_user_registration_path
       #content
         = yield
       #footer
