@@ -1,7 +1,7 @@
 class CreateAlumnos < ActiveRecord::Migration
   def change
     create_table :alumnos do |t|
-      t.integer :no_control
+      t.string :no_control
       t.string  :apellido_paterno
       t.string  :apellido_materno
       t.string  :nombre
