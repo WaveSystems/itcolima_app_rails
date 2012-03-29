@@ -6,26 +6,32 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %div(align = "center")
-      - if notice
-        %div.alert.alert-success
-          %p= notice
-      - if alert
-        %p.alert= alert
     #page
+      %div(align = "center")
+        - if notice
+          %div.alert.alert-success
+            %p= notice
+        - if alert
+          %p.alert= alert
       #header
+        = link_to image_tag('banner1.jpg'), "http://itcolima.edu.mx", :target => "blank"
       #navigation
-        #index
-          %h3= link_to "Inicio", root_path
-        #dashboard
+        #home(align="center")
+          %h3= link_to "Inicio", root_path 
+        #register(align="center")
           %h3= link_to "Registrar proyectos", registrations_path
-        #session
-          - if user_signed_in?
-            #email
-              = current_user.email
-            #button
-              = button_to "Cerrar sesión", destroy_user_session_path, :method => "delete"
-        #content
-          = yield
-        #footer
-          %p &copy WaveSystems 2012
+        #about(align="center")
+          %h3= link_to "Acerca de", about_path
+        #contact(align="center")
+          %h3= link_to "Contacto", contact_path
+        -##session
+          -#- if user_signed_in?
+            -##email
+              -#= current_user.email
+            -##button
+              -#= button_to "Cerrar sesión", destroy_user_session_path, :method => "delete"
+      #content
+        = yield
+      #footer
+        = image_tag('foot1.jpg')
+        %p(align = "center") &copy WaveSystems 2012

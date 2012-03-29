@@ -1,17 +1,31 @@
-<h2>Iniciar sesión</h2>
+<div id = "sign_in" class = "well">
+<table>
+  <tr><td colspan = "2"><h2>Iniciar sesión</h2></td></tr>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <tr>
+      <td width = "70px"><%= f.label :email %></td>
+      <td><%= f.email_field :email %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "Contraseña" %></td>
+      <td><%= f.password_field :password %></td>
+    </tr>
 
-  <div><%= f.label "Contraseña" %><br />
-  <%= f.password_field :password %></div>
+    <tr>
+      <% if devise_mapping.rememberable? -%>
+      <td><%= f.check_box :remember_me %></td>
+      <td><%= f.label "Recordar contraseña" %></td>
+      <% end -%>
+    <tr>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label "Recordar contraseña" %></div>
-  <% end -%>
+      <tr>
+        <td colspan = "2"><%= f.submit "Iniciar sesión" %></td>
+  <% end %>
+    </tr>
 
-  <div><%= f.submit "Iniciar sesión" %></div>
-<% end %>
-
-<%= render "links" %>
+    <tr>
+    <td colspan = "2"><%= render "links" %></td>
+    </tr>
+  </table>
+</div>

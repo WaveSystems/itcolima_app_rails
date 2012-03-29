@@ -1,62 +1,67 @@
-$altura:1080px;
-$ancho:960px;
-
-.message{
-}
-
 body{
 }
-#page{ 
+
+#sign_in{
+  width:300px;
+  left:440px;
+  position:relative;
+}
+#page{
   margin-left:auto;
   margin-right:auto;
-  height:$altura;
-  width:$ancho;
-}
-#header{
-  height:90px;
-  background:gray;
-  width:$ancho;
-  float:left;
-}
-#navigation{
-  background-color:#646b71;
-  height:50px;
-  width:$ancho;
-  float:left;
-}
-#index{
-  width:150px;
-  float:left;
-}
-#dashboard{
-  width:300px;
-  float:left;
-}
-#session{
-  float:left;
-  width:300px;
+  height:100%;
+  width:88.75%;
 }
 
-#email{
-  float:left;
-  width:150px;
+#header{
+  width:100%;
+  height:15%;
 }
-#button{
+
+#navigation{
+  width:100%;
+  height:30px;
+  background-color:#8F8686;
+  font-family:"Helvetica";
+  color:white;
+  font-size:20px;
+}
+
+#home{
+  width:25%;
+  height:100%;
   float:left;
-  width:150px;
+}
+
+#register{
+  width:25%;
+  height:100%;
+  float:left;
+}
+
+#contact{
+  width:25%;
+  height:100%;  
+  float:left;
+}
+
+#about{
+  width:25%;
+  height:100%;  
+  float:left;
 }
 
 #content{
   background-color:white;
-  height:$altura * 0.8;
-  width:$ancho;
-  float:left;
+  width:100%;
+  height:auto;
 }
+
 #footer{
-  float:left;
-  background-color:#646b71;
-  height:50px;
-  width:$ancho;
+  width:100%;
+  height:10%;
+  background-color:gray;
+  position:bottom;
 }
 /*================================= bootstrap items =======================================*/
 
@@ -189,7 +194,7 @@ body {
   font-size: 13px;
   line-height: 18px;
   color: #333333;
-  background-color: #ffffff;
+  background-color:#E4DBDB;
 }
 a {
   color: #0088cc;
@@ -709,7 +714,6 @@ input[type="radio"] {
   border-radius: 0;
   border: 0 \9;
   /* IE9 and down */
-
 }
 input[type="image"] {
   border: 0;
