@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120321132913) do
+ActiveRecord::Schema.define(:version => 20120329044743) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -51,16 +51,66 @@ ActiveRecord::Schema.define(:version => 20120321132913) do
     t.string   "apellido_paterno"
     t.string   "apellido_materno"
     t.string   "nombre"
+    t.integer  "idstatus"
+    t.integer  "idplan"
+    t.integer  "idespecialidad"
+    t.string   "periodoing"
+    t.string   "periodoeg"
+    t.integer  "idescuela"
+    t.string   "idusuario"
+    t.string   "idlocalidadd"
+    t.string   "idmunicipiod"
+    t.string   "idmunicipion"
+    t.string   "idestadon"
+    t.string   "idestadod"
+    t.string   "idpaisn"
+    t.string   "idpaisd"
+    t.integer  "tutor"
+    t.integer  "madre"
+    t.integer  "padre"
+    t.integer  "idsexo"
+    t.integer  "idestadocivil"
+    t.integer  "idareaegresoproc"
+    t.string   "calle"
+    t.string   "numext"
+    t.string   "numint"
+    t.string   "colonia"
+    t.string   "cp"
+    t.string   "email"
+    t.datetime "fechanac"
+    t.string   "curp"
+    t.string   "rfc"
+    t.string   "telefono1"
+    t.string   "telefono2"
+    t.string   "imagen"
+    t.integer  "semestre"
+    t.integer  "maxperiodos"
+    t.integer  "promediobach"
+    t.datetime "anioegbach"
+    t.integer  "serviciomedico"
+    t.string   "institucion"
+    t.string   "numerosm"
+    t.string   "tiposangre"
+    t.string   "seguros"
+    t.integer  "idempresa"
+    t.integer  "idtecnologico"
+    t.string   "titulo"
+    t.date     "fecha_ti"
+    t.string   "op_titulo"
+    t.string   "finado"
+    t.string   "encuesta"
+    t.date     "fecha_enc"
+    t.string   "actualizo"
+    t.date     "fecha_act"
+    t.string   "password"
+    t.integer  "actualizado"
     t.float    "promedio"
     t.integer  "matricula"
-    t.string   "email"
     t.string   "no_ife"
-    t.string   "sexo"
     t.text     "expectativa"
     t.string   "carrera"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
-    t.string   "curp"
     t.integer  "asesor_id"
     t.integer  "proyecto_id"
   end
@@ -90,8 +140,8 @@ ActiveRecord::Schema.define(:version => 20120321132913) do
     t.integer  "numero_de_autores"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
-    t.integer  "numero_asesores"
     t.integer  "asesor_id"
+    t.integer  "numero_asesores"
   end
 
   create_table "users", :force => true do |t|

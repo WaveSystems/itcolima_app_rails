@@ -5,11 +5,62 @@ class CreateAlumnos < ActiveRecord::Migration
       t.string  :apellido_paterno
       t.string  :apellido_materno
       t.string  :nombre
+      t.integer :idstatus
+      t.integer :idplan
+      t.integer :idespecialidad
+      t.string  :periodoing
+      t.string  :periodoeg
+      t.integer :idescuela
+      t.string  :idusuario
+      t.string  :idlocalidadd
+      t.string  :idmunicipiod
+      t.string  :idmunicipion
+      t.string  :idestadon
+      t.string  :idestadod
+      t.string  :idpaisn
+      t.string  :idpaisd
+      t.integer :tutor
+      t.integer :madre
+      t.integer :padre
+      t.integer :idsexo
+      t.integer :idestadocivil
+      t.integer :idareaegresoproc
+      t.string  :calle
+      t.string  :numext
+      t.string  :numint
+      t.string  :colonia
+      t.string  :cp
+      t.string  :email
+      t.datetime :fechanac
+      t.string  :curp
+      t.string  :rfc
+      t.string  :telefono1
+      t.string  :telefono2
+      t.string  :imagen
+      t.integer :semestre
+      t.integer :maxperiodos
+      t.integer :promediobach
+      t.datetime :anioegbach
+      t.integer :serviciomedico
+      t.string  :institucion
+      t.string  :numerosm
+      t.string  :tiposangre
+      t.string  :seguros
+      t.integer :idempresa
+      t.integer :idtecnologico
+      t.string  :titulo
+      t.date    :fecha_ti
+      t.string  :op_titulo
+      t.string  :finado
+      t.string  :encuesta
+      t.date    :fecha_enc
+      t.string  :actualizo
+      t.date    :fecha_act
+      t.string  :password
+      t.integer :actualizado
       t.float   :promedio
       t.integer :matricula
-      t.string  :email
       t.string  :no_ife
-      t.string  :sexo
       t.text    :expectativa
       t.string  :carrera
       t.timestamps
