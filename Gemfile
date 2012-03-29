@@ -9,7 +9,7 @@ gem 'mysql2'
 gem 'devise'
 gem 'activeadmin'
 gem 'haml'
-gem 'twitter-bootstrap'
+#gem 'twitter-bootstrap'
 
 # Gems used only for assets and not required
 # in production environments by default.
