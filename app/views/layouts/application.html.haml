@@ -6,8 +6,12 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %p.notice= notice
-    %p.alert= alert
+    %div(align = "center")
+      - if notice
+        %div.alert.alert-success
+          %p= notice
+      - if alert
+        %p.alert= alert
     #page
       #header
       #navigation
