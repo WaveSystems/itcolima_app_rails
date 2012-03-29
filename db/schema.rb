@@ -141,8 +141,7 @@ ActiveRecord::Schema.define(:version => 20120329044743) do
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.integer  "asesor_id"
-    t.integer  "numero_asesores"
-  end
+    t.integer  "numero_asesores"  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
