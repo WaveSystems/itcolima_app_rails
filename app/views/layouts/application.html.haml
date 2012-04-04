@@ -17,24 +17,24 @@
         = link_to image_tag('banner1.jpg'), "http://itcolima.edu.mx", :target => "blank"
       #navigation
         #home(align="center")
-          %h3= link_to "Inicio", root_path 
+          %h3= link_to "Inicio", root_path, :class => "navigation-bar"
         #register(align="center")
-          %h3= link_to "Registrar proyectos", registrations_path
+          %h3= link_to "Registrar proyectos", registrations_path, :class => "navigation-bar"
         #about(align="center")
-          %h3= link_to "Acerca de", about_path
+          %h3= link_to "Acerca de", about_path, :class => "navigation-bar"
         #contact(align="center")
-          %h3= link_to "Contacto", contact_path
+          %h3= link_to "Contacto", contact_path, :class => "navigation-bar"
         #session
           - if user_signed_in?
             #email(align = "center")
               %h4= current_user.email
             #button(align = "center")
-              %h3= link_to "Cerrar sesión", destroy_user_session_path, :method => "delete"
+              %h3= link_to "Cerrar sesión", destroy_user_session_path, :method => "delete", :class => "navigation-bar"
           - else
             #email(align = "center")
-              %h3= link_to "Iniciar sesión", new_user_session_path
+              %h3= link_to "Iniciar sesión", new_user_session_path, :class => "navigation-bar"
             #button(align = "center")
-              %h3= link_to "Registrarse", new_user_registration_path
+              %h3= link_to "Registrarse", new_user_registration_path, :class => "navigation-bar"
       #content
         = yield
       #footer
