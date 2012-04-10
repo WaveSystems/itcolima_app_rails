@@ -27,6 +27,7 @@ class RegistrationsController < ApplicationController
   end
 
   def edit_alumno
+    @alumno = Alumno.find_by_no_control(params[:id])
   end
 
   def update_alumno

@@ -1,1 +1,9 @@
-= @proyecto.nombre
+%h2= @proyecto.nombre
+
+= form_tag '/new_project/alumnos/edit', :remote => :true do
+  = label_tag 'Ingrese el numero de control:'
+  = text_field_tag :id 
+  = button_to 'Buscar'
+
+
+#edit-alumno

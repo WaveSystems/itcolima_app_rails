@@ -7,7 +7,8 @@ ItcolimaAppRails::Application.routes.draw do
   get '/new_project' => 'registrations#new', :as => :new_project
   post '/create_project' => 'registrations#create', :as => :create_project
   get '/new_project/:proyecto_id/alumnos' => 'registrations#search_for_alumnos', :as => :search_for_alumnos
-  post '/new_project/:proyecto_id/alumnos/:alumno_id' => 'registrations#edit_alumno', :as => :edit_alumno
+  post '/new_project/alumnos/edit' => 'registrations#edit_alumno', :as => :edit_alumno
+  post '/new_project/alumnos/update' => 'registrations#update_alumno', :as => :update_alumno
 
   get '/about' => 'home#about', :as => :about
   get '/contact' => 'home#contact', :as => :contact
