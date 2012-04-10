@@ -109,11 +109,11 @@ ActiveRecord::Schema.define(:version => 20120410163258) do
     t.string   "no_ife"
     t.text     "expectativa"
     t.string   "carrera"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
     t.integer  "asesor_id"
     t.integer  "proyecto_id"
-    t.boolean  "finished"
+    t.boolean  "finished",         :default => false
   end
 
   create_table "asesors", :force => true do |t|
@@ -139,11 +139,11 @@ ActiveRecord::Schema.define(:version => 20120410163258) do
     t.text     "innovacion"
     t.text     "resultados_esperados"
     t.integer  "numero_de_autores"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
     t.integer  "asesor_id"
     t.integer  "numero_asesores"
-    t.boolean  "finished"
+    t.boolean  "finished",             :default => false
   end
 
   create_table "users", :force => true do |t|
