@@ -28,8 +28,14 @@ class RegistrationsController < ApplicationController
 
   def edit_alumno
     @alumno = Alumno.find_by_no_control(params[:id])
+    if @alumno.finished?
+      redirect_to search_for_alumnos_path(params[:proyecto_id])
+    end
   end
 
   def update_alumno
+    @alumno = Alumno.find_by_no_control(params[:alumno][:no_control])
+    @alumno.update_attributes(params[:alumno].merge(:proyecto_id => params[:proyecto_id], :finished => true))
+    redirect_to search_for_alumnos_path(params[:proyecto_id])
   end
 end
