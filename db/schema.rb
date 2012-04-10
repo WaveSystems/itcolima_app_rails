@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120410163258) do
+ActiveRecord::Schema.define(:version => 20120410211426) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -111,7 +111,6 @@ ActiveRecord::Schema.define(:version => 20120410163258) do
     t.string   "carrera"
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
-    t.integer  "asesor_id"
     t.integer  "proyecto_id"
     t.boolean  "finished",         :default => false
   end
@@ -129,6 +128,7 @@ ActiveRecord::Schema.define(:version => 20120410163258) do
     t.string   "tipo_asesor"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.integer  "proyecto_id"
   end
 
   create_table "proyectos", :force => true do |t|
@@ -141,7 +141,6 @@ ActiveRecord::Schema.define(:version => 20120410163258) do
     t.integer  "numero_de_autores"
     t.datetime "created_at",                              :null => false
     t.datetime "updated_at",                              :null => false
-    t.integer  "asesor_id"
     t.integer  "numero_asesores"
     t.boolean  "finished",             :default => false
   end
