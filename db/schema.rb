@@ -113,7 +113,7 @@ ActiveRecord::Schema.define(:version => 20120410163258) do
     t.datetime "updated_at",       :null => false
     t.integer  "asesor_id"
     t.integer  "proyecto_id"
-    t.boolean  "status"
+    t.boolean  "finished"
   end
 
   create_table "asesors", :force => true do |t|
@@ -143,7 +143,7 @@ ActiveRecord::Schema.define(:version => 20120410163258) do
     t.datetime "updated_at",           :null => false
     t.integer  "asesor_id"
     t.integer  "numero_asesores"
-    t.boolean  "status"
+    t.boolean  "finished"
   end
 
   create_table "users", :force => true do |t|
