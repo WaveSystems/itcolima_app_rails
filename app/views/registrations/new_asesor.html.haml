@@ -1,0 +1,36 @@
+%h2 Ingrese los datos del asesor
+= form_for @asesor, :url => create_asesor_path(params[:proyecto_id])  do |f|
+  %table
+    %tr
+      %th Titulo:
+      %td= f.select :titulo, ["Dr.", "M.C.", "Ing.", "Lic."]
+    %tr
+      %th Apellido paterno:
+      %td= f.text_field :apellido_paterno
+    %tr
+      %th Apellido materno:
+      %td= f.text_field :apellido_materno
+    %tr
+      %th Nombre(s):
+      %td= f.text_field :nombre
+    %tr
+      %th Departamento:
+      %td= f.text_field :departamento
+    %tr
+      %th Número de identificacion (IFE)
+      %td= f.text_field :no_ife
+    %tr
+      %th Correo electrónico
+      %td= f.email_field :email
+    %tr
+      %th CURP
+      %td= f.text_field :curp
+    %tr
+      %th Nivel Academico
+      %td= f.select :nivel_academico, Asesor::NIVEL_ACADEMICO
+    %tr
+      %th Tipo de asesor:
+      %td= f.select :nivel_academico, Asesor::TIPO_ASESOR
+    %tr
+      %td
+      %td(colspan = "2")= f.submit "Guardar"

@@ -11,6 +11,9 @@ ItcolimaAppRails::Application.routes.draw do
   post '/new_project/:proyecto_id/alumnos/edit' => 'registrations#edit_alumno', :as => :edit_alumno
   put '/new_project/:proyecto_id/alumnos/update' => 'registrations#update_alumno', :as => :update_alumno
 
+  get '/new_project/:proyecto_id/new_asesor' => 'registrations#new_asesor', :as => :new_asesor
+  post '/new_project/:proyecto_id/create' => 'registrations#create_asesor', :as => :create_asesor
+
   get '/about' => 'home#about', :as => :about
   get '/contact' => 'home#contact', :as => :contact
 end
