@@ -36,7 +36,7 @@ class RegistrationsController < ApplicationController
   def update_alumno
     @alumno = Alumno.find_by_no_control(params[:alumno][:no_control])
     if@alumno.update_attributes(params[:alumno].merge(:proyecto_id => params[:proyecto_id], :finished => true))
-      flash[:notice]="Ingrese los datos de los asesores"
+      flash[:notice]="Ingrese el siguiente alumno"
       redirect_to search_for_alumnos_path(params[:proyecto_id])
     else
       flash[:alert]="Ups! Algo salio mal, intente nuevamente..."
@@ -57,7 +57,7 @@ class RegistrationsController < ApplicationController
   def create_asesor
     @asesor = Asesor.new(params[:asesor].merge(:proyecto_id => params[:proyecto_id]))
     if @asesor.save
-      flash[:notice]="El asesor ha sido creado exitosamente"
+      flash[:notice]="El asesor ha sido creado exitosamente, Ingrese el siguiente asesor..."
       redirect_to new_asesor_path(params[:proyecto_id])
     else
       flash[:alert]="Ups! Algo salio mal, intente nuevamente..."
