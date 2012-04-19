@@ -13,17 +13,17 @@ en:
 
   devise:
     failure:
-      already_authenticated: 'You are already signed in.'
-      unauthenticated: 'You need to sign in or sign up before continuing.'
-      unconfirmed: 'You have to confirm your account before continuing.'
-      locked: 'Your account is locked.'
-      invalid: 'Invalid email or password.'
-      invalid_token: 'Invalid authentication token.'
-      timeout: 'Your session expired, please sign in again to continue.'
-      inactive: 'Your account was not activated yet.'
+      already_authenticated: 'Ya hay una sesión abierta.'
+      unauthenticated: 'Necesitas iniciar sesión para continuar.'
+      unconfirmed: 'Necesitas confirmar tu cuenta para continuar.'
+      locked: 'Tu usuario esta bloqueado.'
+      invalid: 'Correo electrónico o contraseña invalidos.'
+      invalid_token: 'Token de autenticacion invalido.'
+      timeout: 'Tu sesión ha expirado, ingresa nuevamente para continuar.'
+      inactive: 'Tu cuenta ho ha sido activada.'
     sessions:
-      signed_in: 'Signed in successfully.'
-      signed_out: 'Signed out successfully.'
+      signed_in: 'Sesión iniciada exitosamente.'
+      signed_out: 'Ha cerrado sesión exitosamente.'
     passwords:
       send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
       updated: 'Your password was changed successfully. You are now signed in.'
@@ -34,7 +34,7 @@ en:
       send_paranoid_instructions: 'If your e-mail exists on our database, you will receive an email with instructions about how to confirm your account in a few minutes.'
       confirmed: 'Your account was successfully confirmed. You are now signed in.'
     registrations:
-      signed_up: 'Welcome! You have signed up successfully.'
+      signed_up: 'Bienvenido! Has iniciado sesión exitosamente.'
       signed_up_but_unconfirmed: 'A message with a confirmation link has been sent to your email address. Please open the link to activate your account.'
       signed_up_but_inactive: 'You have signed up successfully. However, we could not sign you in because your account is not yet activated.'
       signed_up_but_locked: 'You have signed up successfully. However, we could not sign you in because your account is locked.'
