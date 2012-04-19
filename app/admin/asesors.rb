@@ -3,7 +3,7 @@ ActiveAdmin.register Asesor do
   filter :apellido_paterno
   filter :apellido_materno
   filter :email
-  filter :proyecto_id, :as => :select, :collection => Proyecto.proyectos
+  filter :proyecto_id, :as => :select, :collection => proc { Proyecto.proyectos }
 
   index do |t|
     t.column :id

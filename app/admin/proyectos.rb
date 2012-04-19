@@ -4,6 +4,7 @@ ActiveAdmin.register Proyecto do
 
   index do |t|
     t.column :id
+    t.column :nombre
     t.column :categoria
     t.column :area_participacion
     t.column :objetivo
