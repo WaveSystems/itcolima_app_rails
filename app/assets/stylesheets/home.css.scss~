@@ -1,25 +1,31 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#index{
-  width:900px;
-  font-family:"Helvetica";
-  font-size:40px;
-  color:red;
-}
-#place{
-  width:500px;
-  height:400px;
-  float:left;
-}
-#information{
-  width:390px;
-  height:400px;
-  float:right;
+body{
 }
 
-.information>p{
+#index{
+  width:500px;
+  height:500px;
   font-family:"Helvetica";
-  font-size:40px;
-  color:red;
+  color:white;
+  font-size:20px;
+}
+
+#place{
+  width:250px;
+  height:500px;
+  float:left;
+}
+
+#information{
+  width:250px;
+  height:500px;
+  float:left;
+}
+
+#about{
+  width:400px;
+  height:500px;
+  float:left;
 }
