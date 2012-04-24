@@ -1,11 +1,10 @@
-%h2(align = "center") Registre proyectos!
+%h2(align = "center") Registro de proyectos
 = form_for @proyecto, :url => :create_project do |f|
   %table(align = "center")
     %tr
       %td
         %h4 Categoría: 
       %td= f.select :categoria, Proyecto::CATEGORIAS
-    %trk
       %td
         %h4 Nombre del proyecto: 
       %td= f.text_field :nombre
@@ -13,26 +12,27 @@
       %td
         %h4 Área de participación:
       %td= f.select :area_participacion, Proyecto::AREAS_DE_PARTICIPACION
-    %tr
-      %td
-        %h4 Objetivo del proyecto:
-      %td= f.text_area :objetivo
-    %tr
-      %td
-        %h4 Innovación:
-      %td= f.text_area :innovacion
-    %tr
-      %td
-        %h4 Resultados esperados:
-      %td= f.text_area :resultados_esperados
-    %tr
       %td
         %h4 Numero de autores (de 1 a 5):
       %td= f.select :numero_de_autores, 1..5
     %tr
       %td
+      %td
         %h4 Numero de asesores (de 0 a 2):
-      %td= f.select :numero_asesores, 0..2
+      %td(colspan = "2")= f.select :numero_asesores, 0..2
     %tr
+      %td
+      %td
+        %h4 Objetivo del proyecto:
+        = f.text_area :objetivo
+      %td
+        %h4 Innovación:
+        = f.text_area :innovacion
+      %td
+        %h4 Resultados esperados:
+        = f.text_area :resultados_esperados
+    %tr
+      %td
+      %td
       %td= f.submit 'Guardar proyecto'
 
