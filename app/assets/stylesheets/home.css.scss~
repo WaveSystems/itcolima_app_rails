@@ -29,9 +29,3 @@ body{
   height:500px;
   float:left;
 }
-
-#contact{
-  width:400px;
-  height:500px;
-  float:left;
-}
