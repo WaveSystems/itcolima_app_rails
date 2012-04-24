@@ -4,7 +4,6 @@
     %h1 Registro de Proyectos para la Expoferia
     %br
     %p Evento a realizarse en la explanada principal del Instituto Tecnológico de Colima el 25 de Mayo desde las 9 am hasta las 2 pm.
-    %p Para registrar el proyecto, registrate en la página con tu correo electrónico e inicia sesión. Después accede a la pestaña "Registrar proyectos" en la barra de navegación.
   #place
     = image_tag("Untitled 3.jpg")
     %br

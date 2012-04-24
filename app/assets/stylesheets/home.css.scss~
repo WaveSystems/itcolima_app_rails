@@ -18,9 +18,8 @@
   float:right;
 }
 
-%p.information{
+.information>p{
   font-family:"Helvetica";
   font-size:40px;
   color:red;
 }
-
