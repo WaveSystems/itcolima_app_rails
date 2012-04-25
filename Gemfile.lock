@@ -176,6 +176,7 @@ DEPENDENCIES
   activeadmin
   coffee-rails (~> 3.2.1)
   devise
+  formtastic (= 2.1.1)
   haml
   jquery-rails
   mysql2
