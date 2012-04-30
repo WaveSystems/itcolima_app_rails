@@ -1,6 +1,7 @@
 class Proyecto < ActiveRecord::Base
   has_many :asesors
-  has_many :alumnos
+  has_many :alumno_proyectos
+  has_many :alumnos, :through => :alumno_proyectos
   validates_presence_of :categoria, :nombre, :area_participacion, :objetivo, :innovacion, :resultados_esperados, :numero_de_autores, :numero_asesores
   attr_accessible :categoria, :nombre, :area_participacion, :objetivo, :innovacion, :resultados_esperados, :numero_de_autores, :asesor_id, :numero_asesores, :finished
   CATEGORIAS = %w[Producto Servicio Proceso]

@@ -1,5 +1,6 @@
 class Alumno < ActiveRecord::Base
-  belongs_to :proyecto
+  has_many :alumno_proyectos
+  has_many :proyectos, :through => :alumno_proyectos
 
   attr_accessible :promedio, :matricula, :no_ife, :expectativa, :carrera, :proyecto_id, :finished, :email, :semestre, :no_control, :curp
 
