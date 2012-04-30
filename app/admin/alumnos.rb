@@ -1,5 +1,5 @@
 ActiveAdmin.register Alumno do
-  filter :proyecto_id, :as => :select, :collection => Proyecto.proyectos
+  #filter :proyecto_id, :as => :select, :collection => Proyecto.proyectos
   filter :no_control
   filter :nombre
   filter :apellido_paterno
