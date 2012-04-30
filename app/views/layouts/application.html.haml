@@ -27,7 +27,7 @@
         #session
           - if user_signed_in?
             #email(align = "center")
-              %h4= current_user.email
+              %h4= current_user.username
             #button(align = "center")
               %h3= link_to "Cerrar sesión", destroy_user_session_path, :method => "delete", :class => "navigation-bar"
           - else
