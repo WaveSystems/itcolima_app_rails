@@ -28,9 +28,6 @@ class RegistrationsController < ApplicationController
 
   def edit_alumno
     @alumno = Alumno.find_by_no_control(params[:id])
-    if @alumno.finished?
-      redirect_to search_for_alumnos_path(params[:proyecto_id])
-    end
   end
 
   def update_alumno
