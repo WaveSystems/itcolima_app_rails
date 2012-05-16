@@ -22,7 +22,6 @@
       %td(colspan = "2")= f.select :numero_asesores, 0..2
     %tr
       %td
-      %td
         %h4 Objetivo del proyecto:
         = f.text_area :objetivo
       %td
@@ -31,6 +30,9 @@
       %td
         %h4 Resultados esperados:
         = f.text_area :resultados_esperados
+      %td
+        %h4 Requerimientos(Mesas, sillas, etc...)
+        = f.text_area :requerimentos
     %tr
       %td
       %td
