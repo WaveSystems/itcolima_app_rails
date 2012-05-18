@@ -3,9 +3,12 @@ class Proyecto < ActiveRecord::Base
   has_many :alumno_proyectos
   has_many :alumnos, :through => :alumno_proyectos
   belongs_to :user
-  default_scope order('id DESC')
+
   validates_presence_of :categoria, :nombre, :area_participacion, :objetivo, :innovacion, :resultados_esperados, :numero_de_autores, :numero_asesores, :requerimentos
   attr_accessible :categoria, :nombre, :area_participacion, :objetivo, :innovacion, :resultados_esperados, :numero_de_autores, :asesor_id, :numero_asesores, :finished, :requerimentos
+
+  default_scope order('id DESC')
+
   CATEGORIAS = %w[Producto Servicio Proceso]
   AREAS_DE_PARTICIPACION = %w[Expo\ feria Agua Salud Medio\ ambiente Alimentos Agricultura Transporte Energia Comunicaciones]
 

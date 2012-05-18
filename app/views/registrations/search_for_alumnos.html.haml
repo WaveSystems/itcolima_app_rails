@@ -1,9 +1,10 @@
-%h2= @proyecto.nombre
+%h2(align = "center")= @proyecto.nombre
 
 = form_tag edit_alumno_path(params[:proyecto_id]), :remote => true do
-  = label_tag 'Ingrese el numero de control:'
-  = text_field_tag :id 
-  = button_to 'Buscar'
-
+  %table(align = "center")
+    %tr
+      %td= label_tag 'Ingrese el numero de control:'
+      %td= text_field_tag :id 
+      %td= button_to 'Buscar'
 
 #edit-alumno
