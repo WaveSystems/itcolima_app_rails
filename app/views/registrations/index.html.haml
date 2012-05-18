@@ -2,4 +2,29 @@
 
 %h2(align = "center")= link_to 'Registrar proyecto', new_project_path, :class => "btn btn-inverse"
 
+%br
 
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %th Nombre
+      %th Categoria
+      %th Area participación
+      %th Número de autores
+      %th Número de asesores
+      %th
+      %th
+      %th
+  %tbody
+  - @proyectos.each do |proyecto|
+    %tr
+      %td= proyecto.nombre
+      %td= proyecto.categoria
+      %td= proyecto.area_participacion
+      %td= proyecto.numero_de_autores
+      %td= proyecto.numero_asesores
+      %td= link_to "Editar", edit_project_path(proyecto.id), :class => 'btn btn-primary'
+      %td= link_to "Editar alumnos", edit_alumnos_path(proyecto.id), :class => 'btn btn-success'
+      %td= link_to "Editar asesores", edit_asesores_path(proyecto.id), :class => 'btn btn-info'
+
+= paginate @proyectos

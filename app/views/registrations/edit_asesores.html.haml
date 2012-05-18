@@ -1,0 +1,16 @@
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %th Nombre
+      %th Departamento
+      %th Email
+      %th Nivel academico
+      %th
+  %tbody
+  - @asesores.each do |asesor|
+    %tr
+      %td= "#{asesor.titulo} #{asesor.nombre} #{asesor.apellido_paterno} #{asesor.apellido_materno}"
+      %td= asesor.departamento
+      %td= asesor.email
+      %td= asesor.nivel_academico
+      %td= link_to "Editar", edit_asesor_path(asesor.id), :class => 'btn btn-primary'

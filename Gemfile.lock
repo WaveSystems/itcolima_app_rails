@@ -179,6 +179,7 @@ DEPENDENCIES
   formtastic (= 2.1.1)
   haml
   jquery-rails
+  kaminari
   mysql2
   pry
   rails (= 3.2.1)

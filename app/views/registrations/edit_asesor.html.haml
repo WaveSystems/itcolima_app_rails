@@ -1,5 +1,5 @@
 %h2(align = "center") Ingrese los datos del asesor
-= form_for @asesor, :url => create_asesor_path(params[:proyecto_id])  do |f|
+= form_for @asesor, :url => update_asesor_path(params[:proyecto_id])  do |f|
   %table(align = "center")
     %tr
       %th Titulo:

@@ -1,0 +1,16 @@
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %th Numero de control
+      %th Nombre
+      %th Carrera
+      %th Semestre
+      %th
+  %tbody
+  - @alumnos.each do |alumno|
+    %tr
+      %td= alumno.no_control
+      %td= "#{alumno.nombre} #{alumno.apellido_paterno} #{alumno.apellido_materno}"
+      %td= alumno.carrera
+      %td= alumno.semestre
+      %td= link_to "Editar", edit_a_path(alumno.id), :class => 'btn btn-primary'

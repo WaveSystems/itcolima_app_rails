@@ -1,6 +1,7 @@
 class RegistrationsController < ApplicationController
   before_filter :authenticate_user!
   def index
+    @proyectos = current_user.proyectos.page(params[:page]).per(7)
   end
   
   def new
@@ -8,7 +9,7 @@ class RegistrationsController < ApplicationController
   end
   
   def create
-    @proyecto = Proyecto.new(params[:proyecto])
+    @proyecto = current_user.proyectos.build(params[:proyecto])
     if @proyecto.save
       flash[:notice]="El proyecto ha sido creado exitosamente"
       redirect_to search_for_alumnos_path(@proyecto.id)
@@ -60,6 +61,59 @@ class RegistrationsController < ApplicationController
     else
       flash[:alert]="Ups! Algo salio mal, intente nuevamente..."
       redirect_to new_asesor_path(params[:proyecto_id])
+    end
+  end
+
+  def edit
+    @proyecto = Proyecto.find(params[:id])
+  end
+
+  def update
+    @proyecto = Proyecto.find(params[:id])
+    if @proyecto.update_attributes(params[:proyecto])
+      flash[:notice] = "Cambios guardados exitosamente"
+      redirect_to :registrations
+    else
+      flash[:alert] = "Algo salio mal, revise sus cambios e intente nuevamente..."
+      redirect_to edit_project_path(params[:id])
+    end
+  end
+
+  def edit_alumnos
+    @alumnos = Proyecto.find(params[:id]).alumnos
+  end
+
+  def edit_a
+    @alumno = Alumno.find(params[:id])
+  end
+
+  def update_a
+    @alumno = Alumno.find(params[:id])
+    if @alumno.update_attributes(params[:alumno])
+      flash[:notice] = "Cambios guardados exitosamente"
+      redirect_to :registrations
+    else
+      flash[:alert] = "Algo salio mal, revise sus cambios e intente nuevamente..."
+      redirect_to edit_a_path(params[:id])
+    end
+  end
+
+  def edit_asesores
+    @asesores = Proyecto.find(params[:id]).asesors
+  end
+  
+  def edit_asesor
+    @asesor = Asesor.find(params[:id])
+  end
+
+  def update_asesor
+    @asesor = Asesor.find(params[:id])
+    if @asesor.update_attributes(params[:asesor])
+      flash[:notice] = "Cambios guardados exitosamente"
+      redirect_to :registrations
+    else
+      flash[:alert] = "Algo salio mal, revise sus cambios e intente nuevamente..."
+      redirect_to edit_asesor_path(params[:id])
     end
   end
 end

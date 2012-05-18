@@ -11,6 +11,7 @@ gem 'activeadmin'
 gem 'formtastic', '2.1.1'
 gem 'haml'
 gem 'unicorn'
+gem 'kaminari'
 #gem 'twitter-bootstrap'
 
 # Gems used only for assets and not required
