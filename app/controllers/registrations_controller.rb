@@ -72,7 +72,11 @@ class RegistrationsController < ApplicationController
     @proyecto = Proyecto.find(params[:id])
     if @proyecto.update_attributes(params[:proyecto])
       flash[:notice] = "Cambios guardados exitosamente"
-      redirect_to :registrations
+      unless @proyecto.numero_de_autores > @proyecto.alumnos.count || @proyecto.numero_asesores > @proyecto.asesors.count
+        redirect_to :registrations
+      else
+        redirect_to search_for_alumnos_path(params[:id])
+      end
     else
       flash[:alert] = "Algo salio mal, revise sus cambios e intente nuevamente..."
       redirect_to edit_project_path(params[:id])
