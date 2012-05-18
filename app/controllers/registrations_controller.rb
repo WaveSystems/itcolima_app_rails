@@ -66,6 +66,7 @@ class RegistrationsController < ApplicationController
 
   def edit
     @proyecto = Proyecto.find(params[:id])
+    redirect_to :registrations unless current_user.proyectos.include? @proyecto
   end
 
   def update
