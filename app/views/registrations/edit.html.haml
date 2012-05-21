@@ -3,28 +3,26 @@
   %table(align = "center")
     %tr
       %td
-        %h4 Categoría: 
+        %h4 Categoría: * 
       %td= f.select :categoria, Proyecto::CATEGORIAS
       %td
-        %h4 Nombre del proyecto: 
+        %h4 Nombre del proyecto: * **
       %td= f.text_field :nombre
     %tr
       %td
-        %h4 Área de participación:
+        %h4 Área de participación: *
       %td= f.select :area_participacion, Proyecto::AREAS_DE_PARTICIPACION
       %td
-        %h4 Numero de autores (de 1 a 5):
-      %td
-        %h4= f.select :numero_de_autores, 1..5
+        %h4 Numero de autores (de 1 a 5): *
+      %td= f.select :numero_de_autores, 1..5
     %tr
       %td
       %td
-        %h4 Numero de asesores (de 0 a 2):
-      %td(colspan = "2")
-        %h4= f.select :numero_asesores, 0..2
+        %h4 Numero de asesores (de 0 a 2): *
+      %td(colspan = "2")= f.select :numero_asesores, 0..2
     %tr
       %td
-        %h4 Objetivo del proyecto:
+        %h4 Objetivo del proyecto: *
         = f.text_area :objetivo
       %td
         %h4 Innovación:
@@ -37,7 +35,8 @@
         = f.text_area :requerimentos
     %tr
       %td
-        %p(style = "color:red;") * Todos son campos requeridos
+        %p(style = "color:red;") * Campos requeridos
+        %p(style = "color:red;")** El nombre debe estar disponible
       %td
       %td= f.submit 'Guardar proyecto'
 

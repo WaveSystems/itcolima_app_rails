@@ -14,7 +14,7 @@ class RegistrationsController < ApplicationController
       flash[:notice]="El proyecto ha sido creado exitosamente"
       redirect_to search_for_alumnos_path(@proyecto.id)
     else
-      flash[:alert]="Verifique que los campos requeridos."
+      flash[:alert]="Verifique que los campos requeridos. O seleccione un nombre diferente para el proyecto"
       redirect_to :new_project
     end
   end
@@ -61,7 +61,7 @@ class RegistrationsController < ApplicationController
       flash[:notice]="El asesor ha sido creado exitosamente, Ingrese el siguiente asesor..."
       redirect_to new_asesor_path(params[:proyecto_id])
     else
-      flash[:alert]="Ups! Algo salio mal, intente nuevamente..."
+      flash[:alert]="Revisa los campos requeridos para el asesor"
       redirect_to new_asesor_path(params[:proyecto_id])
     end
   end
@@ -130,7 +130,7 @@ class RegistrationsController < ApplicationController
       flash[:notice] = "Cambios guardados exitosamente"
       redirect_to :registrations
     else
-      flash[:alert] = "Algo salio mal, revise sus cambios e intente nuevamente..."
+      flash[:alert] = "Revisa los campos requeridos para el asesor"
       redirect_to edit_asesor_path(params[:id])
     end
   end

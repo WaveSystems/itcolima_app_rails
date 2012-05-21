@@ -3,7 +3,8 @@ class Asesor < ActiveRecord::Base
   has_many :proyectos, :through => :asesor_proyectos
   NIVEL_ACADEMICO = %w[Maestria Licenciatura Doctorado]
   TIPO_ASESOR = %w[Interno Externo]
-  attr_accessible :titulo, :apellido_paterno, :apellido_materno, :nombre, :departamento, :no_ife, :email, :curp, :nivel_academico, :tipo_asesor, :proyecto_id
+  validates_presence_of :titulo, :apellido_paterno, :apellido_materno, :nombre, :departamento, :email,:nivel_academico, :tipo_asesor
+  attr_accessible :titulo, :apellido_paterno, :apellido_materno, :nombre, :departamento, :no_ife, :email, :curp, :nivel_academico, :tipo_asesor
   
   def self.asesores
     asesores = Asesor.all

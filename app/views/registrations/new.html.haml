@@ -6,7 +6,7 @@
         %h4 Categoría: * 
       %td= f.select :categoria, Proyecto::CATEGORIAS
       %td
-        %h4 Nombre del proyecto: *
+        %h4 Nombre del proyecto: * **
       %td= f.text_field :nombre
     %tr
       %td
@@ -36,6 +36,7 @@
     %tr
       %td
         %p(style = "color:red;") * Campos requeridos
+        %p(style = "color:red;")** El nombre debe estar disponible
       %td
       %td= f.submit 'Guardar proyecto'
 

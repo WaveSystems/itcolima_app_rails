@@ -1,37 +1,40 @@
-= form_for @alumno, :url => update_alumno_path(params[:proyecto_id]) do |f|
-  %table(align = "center")
-    %tr
-      %td
-        %h4 Número de control:
-      %td= @alumno.no_control
-    %tr    
-      = f.hidden_field :no_control, :enabled => false
-      %td
-        %h4 Nombre:
-      %td= "#{@alumno.nombre} #{@alumno.apellido_paterno} #{@alumno.apellido_materno}"
-    %tr
-      %td Promedio:
-      %td= f.text_field :promedio
-    %tr
-      %td Matricula:
-      %td= f.text_field :matricula
-    %tr
-      %td Curp:
-      %td= f.text_field :curp
-    %tr
-      %td Número de identificación (IFE):
-      %td= f.text_field :no_ife
-    %tr
-      %td Correo electrónico:
-      %td= f.text_field :email
-    %tr
-      %td Expectativa:
-      %td= f.select :expectativa, Alumno::EXPECTATIVA
-    %tr
-      %td Semestre:
-      %td= f.select :semestre, Alumno::SEMESTRE
-    %tr
-      %td Carrera:
-      %td= f.select :carrera, Alumno::CARRERA
-    %tr
-      %td(colspan = "2")= f.submit 'Guardar'
+- unless @alumno.nil?
+  = form_for @alumno, :url => update_alumno_path(params[:proyecto_id]) do |f|
+    %table(align = "center")
+      %tr
+        %td
+          %h4 Número de control:
+        %td= @alumno.no_control
+      %tr    
+        = f.hidden_field :no_control, :enabled => false
+        %td
+          %h4 Nombre:
+        %td= "#{@alumno.nombre} #{@alumno.apellido_paterno} #{@alumno.apellido_materno}"
+      %tr
+        %td Promedio:
+        %td= f.text_field :promedio
+      %tr
+        %td Matricula:
+        %td= f.text_field :matricula
+      %tr
+        %td Curp:
+        %td= f.text_field :curp
+      %tr
+        %td Número de identificación (IFE):
+        %td= f.text_field :no_ife
+      %tr
+        %td Correo electrónico:
+        %td= f.text_field :email
+      %tr
+        %td Expectativa:
+        %td= f.select :expectativa, Alumno::EXPECTATIVA
+      %tr
+        %td Semestre:
+        %td= f.select :semestre, Alumno::SEMESTRE
+      %tr
+        %td Carrera:
+        %td= f.select :carrera, Alumno::CARRERA
+      %tr
+        %td(colspan = "2")= f.submit 'Guardar'
+- else
+  %h2(align = "center") Ningun alumno coincide con el número de control ingresado
