@@ -54,8 +54,10 @@ class RegistrationsController < ApplicationController
   end
   
   def create_asesor
-    @asesor = Asesor.new(params[:asesor].merge(:proyecto_id => params[:proyecto_id]))
+    @asesor = Asesor.new(params[:asesor])
     if @asesor.save
+      @asesor_proyecto = AsesorProyecto.new(:asesor_id => @asesor.id, :proyecto_id => params[:proyecto_id])
+      @asesor_proyecto.save
       flash[:notice]="El asesor ha sido creado exitosamente, Ingrese el siguiente asesor..."
       redirect_to new_asesor_path(params[:proyecto_id])
     else
