@@ -1,4 +1,13 @@
 %h2(align = "center") Ingrese los datos del asesor
+= form_tag asesors_path, :remote => true do
+  %table(align = "center")
+    %tr
+      %td= text_field_tag :search, nil, :placeholder => 'Buscar por nombre'
+      = hidden_field_tag :proyecto_id, params[:proyecto_id]
+      %td= button_to "Buscar"
+
+#search_results
+
 = form_for @asesor, :url => create_asesor_path(params[:proyecto_id])  do |f|
   %table(align = "center")
     %tr

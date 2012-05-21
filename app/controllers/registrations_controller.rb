@@ -66,6 +66,17 @@ class RegistrationsController < ApplicationController
     end
   end
 
+  def add_asesor
+    @asesor_proyecto = AsesorProyecto.new(:asesor_id => params[:asesor_id], :proyecto_id => params[:proyecto_id])
+    if @asesor_proyecto.save
+      flash[:notice]="El asesor ha sido agregado exitosamente, Ingrese el siguiente asesor..."
+      redirect_to new_asesor_path(params[:proyecto_id])
+    else
+      flash[:alert]="Ups! Algo salio mal, intente nuevamente..."
+      redirect_to new_asesor_path(params[:proyecto_id])
+    end
+  end
+
   def edit
     @proyecto = Proyecto.find(params[:id])
     redirect_to :registrations unless current_user.proyectos.include? @proyecto

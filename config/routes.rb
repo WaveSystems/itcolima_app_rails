@@ -3,6 +3,9 @@ ItcolimaAppRails::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :user, :path_names => { :sign_up => "register" }
   root :to => 'home#index'
+
+  post '/asesors' => 'asesors#index', :as => :asesors
+
   get '/registrations' => 'registrations#index', :as => :registrations
   get '/new_project' => 'registrations#new', :as => :new_project
   post '/create_project' => 'registrations#create', :as => :create_project
@@ -24,6 +27,7 @@ ItcolimaAppRails::Application.routes.draw do
 
   get '/new_project/:proyecto_id/new_asesor' => 'registrations#new_asesor', :as => :new_asesor
   post '/new_project/:proyecto_id/create' => 'registrations#create_asesor', :as => :create_asesor
+  get '/new_project/:proyecto_id/add_asesor/:asesor_id' => 'registrations#add_asesor', :as => :add_asesor
 
   get '/about' => 'home#about', :as => :about
   get '/contact' => 'home#contact', :as => :contact

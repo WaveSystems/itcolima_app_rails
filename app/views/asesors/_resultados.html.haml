@@ -1,0 +1,20 @@
+%table(align = 'center' class = "table table-bordered table-striped")
+  %thead
+    %th Nombre
+    %th Apellido paterno
+    %th Apellido materno
+    %th
+  %tbody
+  - unless @asesors.empty?
+    - @asesors.each do |asesor|
+      %tr
+        %td= asesor.nombre
+        %td= asesor.apellido_paterno
+        %td= asesor.apellido_materno
+        %td= link_to 'Agregar', add_asesor_path(params[:proyecto_id], asesor.id), :class => 'btn btn-inverse'
+  - else
+    %h3 El asesor que estas buscando no se encuentra en la base de datos.
+
+%h2(align = "center") O crea uno nuevo: 
+
+%br
