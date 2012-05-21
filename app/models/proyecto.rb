@@ -1,7 +1,8 @@
 class Proyecto < ActiveRecord::Base
-  has_many :asesors
   has_many :alumno_proyectos
+  has_many :asesor_proyectos
   has_many :alumnos, :through => :alumno_proyectos
+  has_many :asesors, :through => :asesor_proyectos
   belongs_to :user
 
   validates_presence_of :categoria, :nombre, :area_participacion, :objetivo, :numero_de_autores, :numero_asesores
