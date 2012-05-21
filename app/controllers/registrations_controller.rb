@@ -14,7 +14,7 @@ class RegistrationsController < ApplicationController
       flash[:notice]="El proyecto ha sido creado exitosamente"
       redirect_to search_for_alumnos_path(@proyecto.id)
     else
-      flash[:alert]="Ups! Algo salio mal, intente nuevamente..."
+      flash[:alert]="Verifique que los campos requeridos."
       redirect_to :new_project
     end
   end
