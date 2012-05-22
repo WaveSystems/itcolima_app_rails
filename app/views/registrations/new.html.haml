@@ -32,7 +32,17 @@
         = f.text_area :resultados_esperados
       %td
         %h4 Requerimientos(Mesas, sillas, etc...)
-        = f.text_area :requerimentos
+        %input{ :type =>"checkbox", :name =>"requerimientos[Mesa]", :value => "Mesa,"}
+        Mesa
+        %br
+        %input{ :type =>"checkbox", :name =>"requerimientos[Sillas]", :value => "Sillas,"}
+        Sillas
+        %br
+        %input{ :type =>"checkbox", :name =>"requerimientos[Multicontacto]", :value => "Multicontacto,"}
+        Multicontacto
+        %br
+        %input{ :type =>"checkbox", :name =>"requerimientos[Extension]", :value => "Extension"}
+        Extensión
     %tr
       %td
         %p(style = "color:red;") * Campos requeridos

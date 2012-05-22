@@ -32,11 +32,14 @@
         = f.text_area :resultados_esperados
       %td
         %h4 Requerimientos(Mesas, sillas, etc...)
-        = f.text_area :requerimentos
+        %ul
+        - unless @proyecto.requerimentos.nil?
+          - @proyecto.requerimentos.split(',').each do |requerimiento|
+            - unless requerimiento.blank?
+              %li= requerimiento
     %tr
       %td
         %p(style = "color:red;") * Campos requeridos
         %p(style = "color:red;")** El nombre debe estar disponible
       %td
       %td= f.submit 'Guardar proyecto'
-
