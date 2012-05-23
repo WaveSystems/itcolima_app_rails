@@ -10,7 +10,11 @@ class RegistrationsController < ApplicationController
   
   def create
     @proyecto = current_user.proyectos.build(params[:proyecto])
-    @proyecto.requerimentos = "#{params[:requerimientos]['Mesa']} #{params[:requerimientos]['Sillas']} #{params[:requerimientos]['Multicontacto']} #{params[:requerimientos]['Extension']}"
+    unless params[:requerimientos].nil?
+      @proyecto.requerimentos = "#{params[:requerimientos]['Mesa']} #{params[:requerimientos]['Sillas']} #{params[:requerimientos]['Multicontacto']} #{params[:requerimientos]['Extension']}"
+    else
+      @proyecto.requerimentos = "Ninguno"
+    end
     if @proyecto.save
       flash[:notice]="El proyecto ha sido creado exitosamente"
       redirect_to search_for_alumnos_path(@proyecto.id)
