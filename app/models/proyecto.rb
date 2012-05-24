@@ -18,4 +18,22 @@ class Proyecto < ActiveRecord::Base
     proyectos = Proyecto.all
     proyectos.collect {|proyecto| [proyecto.nombre, proyecto.id]}
   end
+
+  # nombre del proyecto datos de los alumnos y nombre del asesor
+
+  def alumnos_proyecto
+    cadena = ""
+    self.alumnos.each do |alumno|
+      cadena += "#{alumno.no_control} #{alumno.apellido_paterno} #{alumno.apellido_materno} #{alumno.nombre} | "
+    end
+    cadena
+  end
+
+  def asesores_proyecto
+    cadena = ""
+    self.asesors.each do |asesor|
+      cadena += "#{asesor.titulo} #{asesor.apellido_paterno} #{asesor.apellido_materno} #{asesor.nombre}, Departamento:  #{asesor.departamento} | "
+    end
+    cadena
+  end
 end
